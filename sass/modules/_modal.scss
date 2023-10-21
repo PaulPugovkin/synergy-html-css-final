@@ -1,0 +1,255 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    padding: 90px 15px;
+
+    z-index: 999;
+    overflow-y: scroll;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+
+    transition: opacity $transition-cubic;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: relative;
+
+    padding: 15px;
+    margin: 0 auto;
+
+    background-color: #ffffff;
+
+    transition: transform $transition-cubic;
+
+    @media screen and (min-width:480px) and (max-width:1199px) {
+        width: 450px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 528px;
+    }
+
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    outline: none;
+    background-color: transparent;
+
+    transition: transform $transition-cubic;
+
+    &:hover svg,
+    &:focus svg {
+        fill: $accent-color;
+    }
+}
+
+.offer-form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0 25px 0;
+
+    h2 {
+        margin: 0;
+        padding: 0;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.03em;
+
+        color: #212121;
+    }
+    button {
+        padding: 10px 55px;
+        margin: 0 auto;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 30px;
+
+        letter-spacing: 0.06em;
+
+        color: #FFFFFF;
+        background-color: $form-button;
+
+        border: none;
+        border-radius: 4px;
+    }
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 5px 25px 5px 25px;
+
+    input {
+        width: 100%;
+        margin: 0;
+        padding: 11px 0;
+
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        padding-left: 42px;
+
+        transition: border $transition-cubic;
+    }
+
+    &:hover input,
+    &:hover textarea,
+    &:focus-within textarea,
+    &:focus-within input {
+        border: 1px solid $accent-color;
+        outline: none;
+    }
+    &:hover .icon,
+    &:focus-within .icon {
+        fill: $accent-color;
+    }
+
+    label {
+        padding-bottom: 5px;
+        position: relative;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+
+        letter-spacing: 0.01em;
+
+        color: $main-content-text-color;
+    }
+
+    textarea {
+        padding: 12px 16px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+
+        transition: border $transition-cubic;
+    }
+}
+
+.input-icon {
+    position: relative;
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        z-index: 999;
+        transform: translateY(-50%);
+
+        fill: #212121;
+
+        transition: fill $transition-cubic;
+    }
+}
+
+.form-field-policy {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 25px 30px 25px;
+
+    input {
+        position: relative;
+    }
+
+    a {
+        display: inline;
+        font-size: 12px;
+        padding: 0 3px;
+
+        @media screen and (min-width:1200px) {
+            font-size: 14px;
+        }
+    }
+
+    label {
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 1.15;
+
+        letter-spacing: 0.03em;
+        margin: 0;
+
+        color: #757575;
+
+        @media screen and (min-width:1200px) {
+            font-size: 14px;
+            line-height: 1.71;
+        }
+
+        span {
+            
+            @media screen and (min-width: 450px) {
+                display: flex;
+                align-items: center;
+            }
+
+            &::before {
+                content: "";
+                display: inline-flex;
+                width: 16px;
+                height: 16px;
+                border: 1px solid #212121;
+                border-radius: 4px;
+                outline: none;
+                margin-right: 7px;
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.policy-conditions {
+    color: $accent-color;
+}
+
+.checkbox {
+    display: flex;
+    align-self: center;
+
+    &:checked+label span::before {
+        border: none;
+        width: 16px;
+        height: 16px;
+        background-color: $accent-color;
+        background-image: url("../images/check.svg");
+        background-size: contain;
+        background-position: center;
+        display: inline-flex;
+    }
+    &:focus+label span::before {
+        outline: 2px solid #212121;
+    }
+}

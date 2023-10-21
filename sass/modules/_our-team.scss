@@ -1,0 +1,151 @@
+.our-team-block {
+    background: $thirdly-background-color;
+    padding-top: 94px;
+    padding-bottom: 94px;
+    text-align: center;
+
+    h2 {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 42px;
+        text-align: center;
+        letter-spacing: 0.03em;
+
+        color: #212121;
+
+        @media screen and (min-width: 1200px) {
+            font-size: 36px;
+        }
+    }
+
+    @media screen and (max-width: 1199px) {
+        padding: 60px 0;
+    }
+
+    &-list {
+        margin: -15px;
+
+        @media screen and (max-width: 767px) {
+            margin: 0;
+        }
+
+        @media screen and (min-width: 1200px) {
+            display: flex;
+        }
+
+    }
+    
+
+    .master-card {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+        background-color: $main-background-color;
+        border-radius: 0px 0px 4px 4px;
+        margin: 15px;
+
+        @media screen and (max-width: 767px) {
+            margin: 0;
+            text-align: center;
+            display: block;
+            width: 100%;
+            
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1199px) {
+            display: inline-block;
+            width: calc((100% - 4px - 2 * 30px) / 2);
+        }
+
+        @media screen and (min-width:1200px) {
+            text-align: center;
+            display: block;
+            width: calc((100% - 90px) / 4);
+        }
+
+        ul {
+            margin-top: 12px;
+        }
+    }
+
+    .container h3 {
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+    .container p {
+        margin: 0;
+        padding: 0;
+    }
+    .container h2 {
+        display: block;
+        margin: 0;
+        margin-bottom: 50px;
+    }
+}
+
+.our-team-discription {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.19;
+    color: $main-content-text-color;
+}
+
+.our-team-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+    li {
+        margin: 0;
+        padding: 0;
+        width: 44px;
+        height: 44px;
+    }
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        margin-right: 10px;
+
+        fill: #afb1b8;
+
+        transition:
+            fill $transition-cubic,
+            background-color $transition-cubic;
+    }
+    .social-link:last-child {
+        margin-right: 0;
+    }
+    .social-link:hover,
+    .social-link:focus {
+        background-color: #2196f3;
+        fill: #ffffff;
+    }
+}
+
+.discription-item {
+    text-align: center;
+    padding: 30px 32px
+}
+
+.our-team-name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    color: $titles-color;
+}
+
+.link-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
